@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Generated content: counters</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; counter-reset: chapter; }
+  h2 { font-size: 19px; margin: 10px 0 6px; counter-increment: chapter; counter-reset: section; color: #1d3557; }
+  h2::before { content: "Chapter " counter(chapter, upper-roman) ": "; color: #e63946; }
+  h3 { font-size: 15px; margin: 4px 0 4px 20px; counter-increment: section; }
+  h3::before { content: counter(chapter) "." counter(section) " "; color: #457b9d; }
+  ol.nested { counter-reset: item; list-style: none; padding-left: 20px; margin: 6px 0; }
+  ol.nested li { counter-increment: item; }
+  ol.nested li::before { content: counters(item, ".") " "; font-weight: bold; color: #2a9d8f; }
+  .fig { counter-increment: figure; border: 1px solid #ccc; padding: 4px 8px; margin: 6px 0; width: 260px; }
+  .fig::after { content: " (Figure " counter(figure) ")"; color: #888; }
+</style>
+</head>
+<body>
+<h2>Parsing</h2>
+<h3>Tokenizer</h3>
+<h3>Tree builder</h3>
+<h2>Layout</h2>
+<h3>Blocks</h3>
+<h3>Inline</h3>
+<h3>Flexbox</h3>
+<ol class="nested">
+  <li>One<ol class="nested"><li>Nested</li><li>Nested again</li></ol></li>
+  <li>Two</li>
+</ol>
+<div class="fig">Box tree</div>
+<div class="fig">Fragment tree</div>
+</body>
+</html>

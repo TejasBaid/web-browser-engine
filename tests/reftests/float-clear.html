@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Float clearance and BFC containment</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .wrap { width: 600px; background: #eee; margin-bottom: 20px; }
+  .l { float: left; width: 100px; height: 60px; background: #2a9d8f; }
+  .l.tall { height: 100px; background: #264653; }
+  .r { float: right; width: 120px; height: 80px; background: #e76f51; }
+  .clearl { clear: left; height: 30px; background: #e9c46a; }
+  .clearb { clear: both; height: 30px; background: #f4a261; }
+  .bfc { overflow: hidden; background: #a8dadc; padding: 6px; }
+  .bfc .l { height: 40px; }
+  .side { overflow: hidden; height: 50px; background: #6a4c93; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="l"></div><div class="r"></div>
+  <div class="clearl"></div>
+  <div class="l tall"></div><div class="r"></div>
+  <div class="clearb"></div>
+</div>
+<div class="wrap bfc">
+  <div class="l"></div><div class="l" style="background:#e63946"></div>
+</div>
+<div class="wrap">
+  <div class="l tall"></div>
+  <div class="side"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/*
+ * Shared stylesheet for the reftest gallery.
+ *
+ * Conventions for every page in tests/reftests/:
+ *   - starts with <!DOCTYPE html> (standards mode) and links this file;
+ *   - renders entirely inside an 800x600 viewport (no scrolling);
+ *   - uses only the three font families declared below, which point at the
+ *     fonts bundled in assets/fonts/. The engine maps these family names to the
+ *     same files, so both the engine and headless Chrome rasterize identical fonts;
+ *   - no JavaScript, form controls, transforms, gradients or shadows;
+ *   - integer pixel sizes and solid colors wherever possible.
+ *
+ * Reference screenshots are produced by scripts/reftest-chrome.sh into ref/.
+ */
+
+@font-face { font-family: "Liberation Sans"; src: url(../../assets/fonts/LiberationSans-Regular.ttf); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Liberation Sans"; src: url(../../assets/fonts/LiberationSans-Bold.ttf); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Liberation Sans"; src: url(../../assets/fonts/LiberationSans-Italic.ttf); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Liberation Sans"; src: url(../../assets/fonts/LiberationSans-BoldItalic.ttf); font-weight: 700; font-style: italic; }
+
+@font-face { font-family: "Liberation Serif"; src: url(../../assets/fonts/LiberationSerif-Regular.ttf); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Liberation Serif"; src: url(../../assets/fonts/LiberationSerif-Bold.ttf); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Liberation Serif"; src: url(../../assets/fonts/LiberationSerif-Italic.ttf); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Liberation Serif"; src: url(../../assets/fonts/LiberationSerif-BoldItalic.ttf); font-weight: 700; font-style: italic; }
+
+@font-face { font-family: "Liberation Mono"; src: url(../../assets/fonts/LiberationMono-Regular.ttf); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Liberation Mono"; src: url(../../assets/fonts/LiberationMono-Bold.ttf); font-weight: 700; font-style: normal; }
+
+html { font-family: "Liberation Sans"; }

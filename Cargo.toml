@@ -1,0 +1,46 @@
+[package]
+name = "browser-engine"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "A web browser engine written from scratch: WHATWG HTML parser, CSS cascade, block/inline/flex/table layout and a software rasterizer"
+license = "MIT"
+repository = "https://github.com/TejasBaid/web-browser-engine"
+readme = "README.md"
+keywords = ["browser", "html", "css", "layout", "rendering"]
+categories = ["web-programming", "rendering", "parser-implementations"]
+default-run = "browser"
+
+[lib]
+name = "browser_engine"
+path = "src/lib.rs"
+
+[[bin]]
+name = "browser"
+path = "src/main.rs"
+
+[features]
+default = ["gui"]
+## The windowed browser (`browser open <url>`). Disable with `--no-default-features`
+## for a headless-only build.
+gui = ["dep:winit", "dep:softbuffer"]
+
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+image = { version = "0.25.10", default-features = false, features = ["png", "jpeg", "gif"] }
+ureq = "3.4.2"
+url = "2.5.8"
+softbuffer = { version = "0.4.8", optional = true }
+winit = { version = "0.30.13", optional = true }
+rustybuzz = "0.20.1"
+ab_glyph = "0.2.32"
+
+[profile.release]
+codegen-units = 4
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.test]
+opt-level = 1

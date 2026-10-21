@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mixed: card grid</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; background: #f0f2f5; font-size: 14px; color: #1c1e21; }
+  h1 { font-size: 26px; margin: 0; padding: 24px 32px 8px; }
+  .sub { margin: 0; padding: 0 32px 20px; color: #606770; }
+  .grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 0 32px; }
+  .card { width: 226px; background: #fff; border-radius: 10px; border: 1px solid #dddfe2; overflow: hidden; }
+  .thumb { height: 90px; }
+  .t1 { background: #ff6b6b; } .t2 { background: #4dabf7; } .t3 { background: #51cf66; }
+  .t4 { background: #fcc419; } .t5 { background: #845ef7; } .t6 { background: #20c997; }
+  .body { padding: 12px 14px 14px; }
+  .body h2 { font-size: 16px; margin: 0 0 6px; }
+  .body p { margin: 0 0 10px; color: #606770; line-height: 18px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 10px; background: #e7f5ff; color: #1971c2; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>Rendering engines</h1>
+<p class="sub">Six cards laid out with flex-wrap and gap.</p>
+<div class="grid">
+  <div class="card"><div class="thumb t1"></div><div class="body"><h2>Parsing</h2><p>Bytes become tokens and tokens become a DOM tree.</p><span class="tag">HTML</span></div></div>
+  <div class="card"><div class="thumb t2"></div><div class="body"><h2>Styling</h2><p>Selectors match elements and the cascade picks values.</p><span class="tag">CSS</span></div></div>
+  <div class="card"><div class="thumb t3"></div><div class="body"><h2>Layout</h2><p>Boxes get positions and sizes in formatting contexts.</p><span class="tag">Boxes</span></div></div>
+  <div class="card"><div class="thumb t4"></div><div class="body"><h2>Display list</h2><p>Fragments turn into ordered paint commands.</p><span class="tag">Paint</span></div></div>
+  <div class="card"><div class="thumb t5"></div><div class="body"><h2>Raster</h2><p>Commands fill pixels with anti-aliased edges.</p><span class="tag">Pixels</span></div></div>
+  <div class="card"><div class="thumb t6"></div><div class="body"><h2>Compositing</h2><p>Layers with opacity are blended together.</p><span class="tag">Layers</span></div></div>
+</div>
+</body>
+</html>

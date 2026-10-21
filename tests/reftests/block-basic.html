@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Block layout: nested boxes</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .outer { width: 500px; padding: 20px; border: 6px solid #1d3557; background: #a8dadc; }
+  .inner { height: 60px; margin: 10px 0; background: #e63946; border: 4px solid #000; }
+  .inner.b { width: 300px; background: #f4a261; padding: 10px; }
+  .inner.c { width: 50%; height: 40px; background: #2a9d8f; }
+  .row { height: 30px; background: #457b9d; }
+  .row + .row { background: #264653; }
+  .tall { height: 100px; width: 120px; background: #ffb703; border: 10px solid #fb8500; }
+</style>
+</head>
+<body>
+<div class="outer">
+  <div class="inner"></div>
+  <div class="inner b"></div>
+  <div class="inner c"></div>
+  <div class="row"></div>
+  <div class="row"></div>
+</div>
+<div class="tall"></div>
+</body>
+</html>

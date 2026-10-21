@@ -1,0 +1,118 @@
+/*
+ * User-agent stylesheet. Based on the rendering section of the HTML standard
+ * (https://html.spec.whatwg.org/multipage/rendering.html) with Chrome's values where the
+ * standard leaves room, so pages look the way authors expect.
+ */
+
+/* Hidden elements */
+area, base, basefont, datalist, head, link, meta, noembed, noframes, param, rp, script,
+style, template, title, [hidden], dialog:not([open]), input[type=hidden] {
+  display: none;
+}
+
+/* Flow content */
+html, body, address, blockquote, center, dialog, div, figure, figcaption, footer, form,
+header, hr, legend, listing, main, p, plaintext, pre, search, xmp, article, aside, h1, h2,
+h3, h4, h5, h6, hgroup, nav, section, details, summary, fieldset, optgroup, frameset, frame {
+  display: block;
+}
+
+html { color: canvastext; }
+body { margin: 8px; }
+
+p, blockquote, figure, listing, plaintext, pre, xmp, dl { margin-top: 1em; margin-bottom: 1em; }
+blockquote, figure { margin-left: 40px; margin-right: 40px; }
+address { font-style: italic; }
+center { text-align: -webkit-center; }
+listing, plaintext, pre, xmp { font-family: monospace; white-space: pre; }
+dialog { position: absolute; left: 0; right: 0; margin: auto; border: solid; padding: 1em;
+         background: white; color: black; width: fit-content; }
+
+/* Headings */
+h1 { font-size: 2em; margin-top: 0.67em; margin-bottom: 0.67em; font-weight: bold; }
+h2 { font-size: 1.5em; margin-top: 0.83em; margin-bottom: 0.83em; font-weight: bold; }
+h3 { font-size: 1.17em; margin-top: 1em; margin-bottom: 1em; font-weight: bold; }
+h4 { margin-top: 1.33em; margin-bottom: 1.33em; font-weight: bold; }
+h5 { font-size: 0.83em; margin-top: 1.67em; margin-bottom: 1.67em; font-weight: bold; }
+h6 { font-size: 0.67em; margin-top: 2.33em; margin-bottom: 2.33em; font-weight: bold; }
+:is(article, aside, nav, section) h1 { font-size: 1.5em; margin-top: 0.83em; margin-bottom: 0.83em; }
+
+/* Lists */
+ul, menu, dir { display: block; list-style-type: disc; margin-top: 1em; margin-bottom: 1em; padding-left: 40px; }
+ol { display: block; list-style-type: decimal; margin-top: 1em; margin-bottom: 1em; padding-left: 40px; }
+li { display: list-item; }
+:is(ul, ol, menu, dir) :is(ul, ol, menu, dir) { margin-top: 0; margin-bottom: 0; }
+:is(ul, ol, menu, dir) ul, :is(ul, ol, menu, dir) menu, :is(ul, ol, menu, dir) dir { list-style-type: circle; }
+:is(ul, ol, menu, dir) :is(ul, ol, menu, dir) ul, :is(ul, ol, menu, dir) :is(ul, ol, menu, dir) menu,
+:is(ul, ol, menu, dir) :is(ul, ol, menu, dir) dir { list-style-type: square; }
+dd { display: block; margin-left: 40px; }
+dt { display: block; }
+ol[type="a" s] { list-style-type: lower-alpha; }
+ol[type="A" s] { list-style-type: upper-alpha; }
+ol[type="i" s] { list-style-type: lower-roman; }
+ol[type="I" s] { list-style-type: upper-roman; }
+ol[type="1"] { list-style-type: decimal; }
+ul[type=disc i] { list-style-type: disc; }
+ul[type=circle i] { list-style-type: circle; }
+ul[type=square i] { list-style-type: square; }
+summary { display: list-item; list-style-type: disclosure-closed; }
+details[open] > summary { list-style-type: disclosure-open; }
+
+/* Tables */
+table { display: table; border-collapse: separate; border-spacing: 2px; box-sizing: border-box; text-indent: initial; border-color: gray; }
+caption { display: table-caption; text-align: center; }
+colgroup { display: table-column-group; }
+col { display: table-column; }
+thead { display: table-header-group; vertical-align: middle; border-color: inherit; }
+tbody { display: table-row-group; vertical-align: middle; border-color: inherit; }
+tfoot { display: table-footer-group; vertical-align: middle; border-color: inherit; }
+tr { display: table-row; vertical-align: inherit; border-color: inherit; }
+td, th { display: table-cell; vertical-align: inherit; padding: 1px; }
+th { font-weight: bold; text-align: -webkit-center; }
+
+/* Phrasing content */
+b, strong { font-weight: bolder; }
+i, cite, em, var, dfn { font-style: italic; }
+code, kbd, samp, tt { font-family: monospace; }
+big { font-size: larger; }
+small { font-size: smaller; }
+sub { vertical-align: sub; font-size: smaller; }
+sup { vertical-align: super; font-size: smaller; }
+u, ins { text-decoration: underline; }
+s, strike, del { text-decoration: line-through; }
+mark { background-color: mark; color: marktext; }
+abbr[title], acronym[title] { text-decoration: dotted underline; }
+q::before { content: open-quote; }
+q::after { content: close-quote; }
+nobr { white-space: nowrap; }
+wbr { display: inline; }
+ruby { display: ruby; }
+rt { font-size: 50%; }
+br { display: inline; }
+
+a:any-link { color: linktext; text-decoration: underline; cursor: pointer; }
+
+/* Embedded content */
+img, video, canvas, iframe, embed, object, svg { display: inline; }
+iframe { border: 2px inset; }
+video { object-fit: contain; }
+
+/* Horizontal rule */
+hr { color: gray; border-style: inset; border-width: 1px; margin: 0.5em auto; overflow: hidden; }
+
+/* Form controls (simplified rendering) */
+input, select, textarea, button { display: inline-block; font-size: 13.333px; font-family: sans-serif;
+  letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: 0; text-align: start;
+  line-height: normal; color: fieldtext; }
+input, textarea, select { border: 2px inset #767676; background-color: field; padding: 1px 2px; }
+input { width: 153px; }
+input[type=checkbox], input[type=radio] { width: 13px; height: 13px; margin: 3px 3px 3px 4px; padding: 0;
+  border: 1px solid #767676; }
+input[type=radio] { border-radius: 50%; }
+input[type=submit], input[type=button], input[type=reset], button { border: 2px outset #767676;
+  background-color: buttonface; padding: 1px 6px; text-align: center; width: auto; }
+textarea { white-space: pre-wrap; font-family: monospace; width: 182px; height: 30px; }
+select { padding: 0; }
+option { display: block; }
+fieldset { margin-left: 2px; margin-right: 2px; padding: 0.35em 0.75em 0.625em; border: 2px groove #c0c0c0; }
+legend { padding-left: 2px; padding-right: 2px; }

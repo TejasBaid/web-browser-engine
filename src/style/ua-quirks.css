@@ -1,0 +1,12 @@
+/* Extra user-agent rules for documents in quirks mode (from Chromium's quirks.css). */
+table {
+  font-weight: initial;
+  font-style: initial;
+  font-size: initial;
+  line-height: initial;
+  white-space: initial;
+  text-align: initial;
+}
+img[align=left i] { margin-right: 3px; }
+img[align=right i] { margin-left: 3px; }
+form { margin-bottom: 1em; }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>opacity</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 18px; }
+  .bg { width: 700px; height: 140px; background: #1d3557; padding: 20px; box-sizing: border-box; margin-bottom: 20px; }
+  .o { float: left; width: 100px; height: 100px; margin-right: 20px; background: #e63946; }
+  .o1 { opacity: 1; }
+  .o2 { opacity: 0.75; }
+  .o3 { opacity: 0.5; }
+  .o4 { opacity: 0.25; }
+  .o5 { opacity: 0; }
+  .group { position: relative; width: 300px; height: 160px; opacity: 0.5; }
+  .group div { position: absolute; width: 140px; height: 100px; }
+  .g1 { left: 0; top: 0; background: #2a9d8f; }
+  .g2 { left: 80px; top: 50px; background: #f4a261; }
+  .txt { opacity: 0.6; color: #6a4c93; font-weight: bold; font-size: 28px; }
+</style>
+</head>
+<body>
+<div class="bg">
+  <div class="o o1"></div><div class="o o2"></div><div class="o o3"></div><div class="o o4"></div><div class="o o5"></div>
+</div>
+<div class="group"><div class="g1"></div><div class="g2"></div></div>
+<p class="txt">Semi-transparent text</p>
+</body>
+</html>

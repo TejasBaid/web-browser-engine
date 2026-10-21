@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>position: relative</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .row { height: 50px; width: 400px; margin-bottom: 10px; background: #ddd; }
+  .rel { position: relative; background: #e63946; }
+  .r1 { left: 40px; top: 10px; }
+  .r2 { right: 30px; background: #457b9d; }
+  .r3 { top: -20px; left: 100px; background: rgba(42, 157, 143, 0.85); }
+  .r4 { bottom: 20px; left: 20px; background: #f4a261; }
+  p { width: 400px; line-height: 24px; }
+  .shift { position: relative; top: -6px; color: #c1121f; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="row rel r1"></div>
+<div class="row rel r2"></div>
+<div class="row rel r3"></div>
+<div class="row"></div>
+<div class="row rel r4"></div>
+<p>Relative positioning moves a <span class="shift">word upward</span> without changing where the rest of the line goes.</p>
+</body>
+</html>

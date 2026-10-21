@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>z-index and stacking order</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; }
+  .box { position: absolute; width: 150px; height: 110px; }
+  .a { left: 30px; top: 30px; background: #e63946; z-index: 3; }
+  .b { left: 90px; top: 70px; background: #457b9d; z-index: 1; }
+  .c { left: 150px; top: 110px; background: #2a9d8f; z-index: 2; }
+  .ctx { position: absolute; left: 380px; top: 30px; width: 300px; height: 250px; background: #ddd; z-index: 1; }
+  .ctx .hi { position: absolute; left: 20px; top: 20px; width: 120px; height: 100px; background: #6a4c93; z-index: 100; }
+  .outside { position: absolute; left: 440px; top: 90px; width: 120px; height: 100px; background: #f4a261; z-index: 2; }
+  .neg { position: absolute; left: 60px; top: 300px; width: 220px; height: 120px; background: #023047; z-index: -1; }
+  .flow { margin: 330px 0 0 30px; width: 260px; height: 60px; background: #ffb703; }
+  .auto1 { position: absolute; left: 380px; top: 330px; width: 140px; height: 90px; background: #8338ec; }
+  .auto2 { position: absolute; left: 430px; top: 370px; width: 140px; height: 90px; background: #ff006e; }
+</style>
+</head>
+<body>
+<div class="box a"></div>
+<div class="box b"></div>
+<div class="box c"></div>
+<div class="ctx"><div class="hi"></div></div>
+<div class="outside"></div>
+<div class="neg"></div>
+<div class="flow"></div>
+<div class="auto1"></div>
+<div class="auto2"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>line-height</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  p { width: 220px; float: left; margin: 0 16px 0 0; background: #fff3b0; }
+  .n { line-height: normal; }
+  .one { line-height: 1; background: #e09f3e; }
+  .num { line-height: 1.8; background: #9e2a2b; color: #fff; }
+  .px { line-height: 30px; background: #335c67; color: #fff; }
+  .pct { line-height: 150%; background: #540b0e; color: #fff; margin-top: 20px; }
+  .mixed { line-height: 24px; background: #caf0f8; margin-top: 20px; }
+  .mixed big { font-size: 32px; }
+</style>
+</head>
+<body>
+<p class="n">Normal line height uses the font's own ascent, descent and line gap metrics.</p>
+<p class="one">A line height of one packs lines tightly together.</p>
+<p class="num">A unitless 1.8 multiplier spaces the lines apart.</p>
+<p class="px">Thirty pixel line height is exact and fixed.</p>
+<p class="pct">Percentage line height is computed once and inherited as a length.</p>
+<p class="mixed">A <big>larger</big> word grows its own line box but not the others.</p>
+</body>
+</html>

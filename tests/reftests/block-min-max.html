@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>min/max width and height</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .container { width: 600px; background: #eee; padding: 10px; }
+  .b { height: 40px; margin: 8px 0; }
+  .maxw { max-width: 300px; background: #e63946; }
+  .minw { width: 100px; min-width: 250px; background: #457b9d; }
+  .clampw { width: 90%; max-width: 400px; min-width: 200px; background: #2a9d8f; }
+  .minh { height: 20px; min-height: 70px; background: #f4a261; width: 200px; }
+  .maxh { height: 200px; max-height: 50px; background: #6a4c93; width: 200px; }
+  .minwins { width: 300px; max-width: 100px; min-width: 200px; background: #ffb703; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="b maxw"></div>
+  <div class="b minw"></div>
+  <div class="b clampw"></div>
+  <div class="minh"></div>
+  <div class="maxh" style="margin-top: 8px"></div>
+  <div class="b minwins"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>text-align</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  p { width: 340px; margin: 0 0 12px; padding: 6px; background: #edf6f9; border-left: 4px solid #006d77; }
+  .l { text-align: left; }
+  .c { text-align: center; }
+  .r { text-align: right; }
+  .j { text-align: justify; }
+  .wide { width: 700px; }
+  .cbox { text-align: center; }
+  .cbox span { display: inline-block; width: 80px; height: 30px; background: #e29578; }
+</style>
+</head>
+<body>
+<p class="l">Left aligned text starts each line at the left edge of the box and leaves a ragged right edge.</p>
+<p class="c">Centered text is placed in the middle of every line box, with equal space on both sides.</p>
+<p class="r">Right aligned text ends each line flush with the right edge and leaves the left edge ragged.</p>
+<p class="j">Justified text stretches the spaces between words so that every line except the last one fills the full width of the box.</p>
+<p class="cbox wide"><span></span> <span></span> <span></span></p>
+</body>
+</html>

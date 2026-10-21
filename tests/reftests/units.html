@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Units: px, em, rem, %, vw, vh, calc()</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  html { font-size: 10px; }
+  body { margin: 2rem; font-size: 16px; }
+  div { height: 30px; margin-bottom: 8px; color: #fff; font-size: 13px; line-height: 30px; padding-left: 4px; box-sizing: border-box; }
+  .px { width: 200px; background: #e63946; }
+  .em { width: 15em; background: #f4a261; }
+  .nested { font-size: 20px; }
+  .nested .em2 { width: 10em; background: #e9c46a; color: #000; }
+  .rem { width: 30rem; background: #2a9d8f; }
+  .pct { width: 50%; background: #264653; }
+  .vw { width: 50vw; background: #457b9d; }
+  .vh { width: 40vh; background: #6a4c93; }
+  .calc1 { width: calc(100% - 100px); background: #1d3557; }
+  .calc2 { width: calc(50% + 2em); background: #ff006e; }
+  .calc3 { width: calc(10rem * 3); background: #8338ec; }
+  .calc4 { width: calc((100vw - 64px) / 4); background: #fb5607; }
+  .tall { width: 60px; height: 10vh; background: #3a86ff; }
+</style>
+</head>
+<body>
+<div class="px">200px</div>
+<div class="em">15em at 13px</div>
+<div class="nested"><div class="em2">10em at 13px</div></div>
+<div class="rem">30rem (300px)</div>
+<div class="pct">50%</div>
+<div class="vw">50vw (400px)</div>
+<div class="vh">40vh (240px)</div>
+<div class="calc1">calc(100% - 100px)</div>
+<div class="calc2">calc(50% + 2em)</div>
+<div class="calc3">calc(10rem * 3)</div>
+<div class="calc4">calc((100vw - 64px) / 4)</div>
+<div class="tall"></div>
+</body>
+</html>

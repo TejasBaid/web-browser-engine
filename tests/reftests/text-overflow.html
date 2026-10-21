@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Text: overflow-wrap, word-break, text-overflow</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .box { width: 220px; border: 2px solid #457b9d; padding: 6px; margin-bottom: 14px; background: #f1faee; }
+  .ell { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wrap { overflow-wrap: anywhere; }
+  .breakall { word-break: break-all; }
+  .card { display: flex; gap: 10px; width: 360px; align-items: center; border: 1px solid #ccc; padding: 8px; }
+  .card .avatar { width: 40px; height: 40px; border-radius: 50%; background: #e76f51; flex: none; }
+  .card .name { flex: 1; min-width: 0; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="box ell">This sentence is far too long to fit on one line of the box.</div>
+<div class="box">Supercalifragilisticexpialidociouswordthatoverflows</div>
+<div class="box wrap">Supercalifragilisticexpialidociouswordthatwraps</div>
+<div class="box breakall">break-all splits words anywhere when the line fills</div>
+<div class="box wrap">https://example.com/a/very/long/path/that/would/otherwise/overflow</div>
+<div class="card"><div class="avatar"></div><div class="name ell">A display name that is much too long for the card</div></div>
+</body>
+</html>

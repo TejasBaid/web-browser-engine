@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Images: formats and sizing</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 14px; background: #eef; }
+  .row { margin-bottom: 16px; }
+  .alphabg { display: inline-block; background: #2a9d8f; padding: 6px; }
+  img { vertical-align: bottom; }
+  .styled { width: 120px; height: 60px; border: 4px solid #e63946; }
+  .block { display: block; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="row">
+  Intrinsic: <img src="images/quadrants.png" alt="png">
+  <img src="images/photo.jpg" alt="jpeg">
+  <img src="images/checker.gif" alt="gif">
+  <span class="alphabg"><img src="images/alpha.png" alt="alpha png"></span>
+</div>
+<div class="row">
+  width+height: <img src="images/quadrants.png" width="128" height="40" alt="">
+  width only: <img src="images/quadrants.png" width="128" alt="">
+  height only: <img src="images/photo.jpg" height="50" alt="">
+</div>
+<div class="row">
+  CSS size + border: <img class="styled" src="images/photo.jpg" alt="">
+  <img src="images/checker.gif" style="width: 80px" alt="">
+</div>
+<img class="block" src="images/quadrants.png" width="192" height="144" alt="">
+<p>Text <img src="images/checker.gif" width="20" height="20" style="vertical-align: baseline" alt=""> with an inline image sitting on the baseline.</p>
+</body>
+</html>

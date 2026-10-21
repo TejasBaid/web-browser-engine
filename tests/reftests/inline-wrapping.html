@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inline text wrapping</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 16px; font-size: 16px; }
+  .col { float: left; margin-right: 16px; padding: 8px; background: #fefae0; border: 2px solid #bc6c25; }
+  .w1 { width: 140px; }
+  .w2 { width: 240px; }
+  .w3 { width: 320px; }
+  p { margin: 0 0 10px; }
+  .long { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="col w1">
+  <p>The quick brown fox jumps over the lazy dog near the riverbank.</p>
+  <p>Supercalifragilisticexpialidocious overflows.</p>
+</div>
+<div class="col w2">
+  <p>Text wraps at spaces between words. A line breaks when the next word no longer fits in the remaining width of the line box.</p>
+  <p class="long">Smaller text fits more words on each line, so the paragraph is shorter than the one above it.</p>
+</div>
+<div class="col w3">
+  <p>Multiple    spaces   collapse
+  and newlines
+  become spaces. <b>Bold words</b> and <i>italic words</i> wrap together with <span style="color:#c1121f">colored text</span> in a single paragraph.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Structural pseudo-classes</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 14px; }
+  ul { list-style: none; padding: 0; margin: 0 20px 0 0; width: 170px; float: left; }
+  li { height: 24px; line-height: 24px; margin-bottom: 3px; padding-left: 8px; background: #e9ecef; }
+  .fc li:first-child { background: #e63946; color: #fff; }
+  .fc li:last-child { background: #457b9d; color: #fff; }
+  .odd li:nth-child(odd) { background: #2a9d8f; color: #fff; }
+  .n3 li:nth-child(3n+1) { background: #f4a261; }
+  .first3 li:nth-child(-n+3) { background: #6a4c93; color: #fff; }
+  .not li:not(.skip) { background: #ffb703; }
+  .not li:not(.skip):not(:first-child) { font-weight: bold; }
+  .even li:nth-child(2n) { background: #023047; color: #fff; }
+</style>
+</head>
+<body>
+<ul class="fc"><li>first-child</li><li>two</li><li>three</li><li>four</li><li>last-child</li></ul>
+<ul class="odd"><li>odd</li><li>two</li><li>odd</li><li>four</li><li>odd</li><li>six</li><li>odd</li></ul>
+<ul class="n3"><li>3n+1</li><li>2</li><li>3</li><li>3n+1</li><li>5</li><li>6</li><li>3n+1</li></ul>
+<ul class="first3"><li>-n+3</li><li>-n+3</li><li>-n+3</li><li>4</li><li>5</li></ul>
+<ul class="not" style="clear: left; margin-top: 20px"><li>not .skip</li><li class="skip">skip</li><li>not .skip</li><li class="skip">skip</li><li>not .skip</li></ul>
+<ul class="even" style="margin-top: 20px"><li>1</li><li>2n</li><li>3</li><li>2n</li><li>5</li><li>2n</li></ul>
+</body>
+</html>

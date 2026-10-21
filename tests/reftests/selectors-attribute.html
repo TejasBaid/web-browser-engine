@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Attribute selectors</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; }
+  div { height: 34px; line-height: 34px; padding-left: 10px; margin-bottom: 6px; background: #e9ecef; width: 520px; font-family: "Liberation Mono"; font-size: 13px; }
+  [data-present] { background: #e63946; color: #fff; }
+  [data-x="exact"] { background: #f4a261; }
+  [data-list~="beta"] { background: #2a9d8f; color: #fff; }
+  [lang|="en"] { background: #457b9d; color: #fff; }
+  [href^="https"] { background: #6a4c93; color: #fff; }
+  [href$=".pdf"] { background: #ffb703; }
+  [title*="mid"] { background: #8ecae6; }
+  [data-case="ABC" i] { background: #023047; color: #fff; }
+  [data-x="nomatch"] { background: black; }
+</style>
+</head>
+<body>
+<div data-present>[data-present]</div>
+<div data-x="exact">[data-x="exact"]</div>
+<div data-list="alpha beta gamma">[data-list~="beta"]</div>
+<div lang="en-US">[lang|="en"] with en-US</div>
+<div lang="en">[lang|="en"] with en</div>
+<div lang="english">lang="english" does not match |=</div>
+<div href="https://example.com">[href^="https"]</div>
+<div href="/files/report.pdf">[href$=".pdf"]</div>
+<div title="a middle b">[title*="mid"]</div>
+<div data-case="abc">[data-case="ABC" i]</div>
+<div data-x="exactly">data-x="exactly" does not match =</div>
+</body>
+</html>

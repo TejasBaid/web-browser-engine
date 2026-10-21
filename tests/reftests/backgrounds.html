@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Backgrounds and canvas propagation</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  /* The body background propagates to the whole canvas. */
+  body { background: #fdf0d5; margin: 30px; }
+  .panel { width: 500px; padding: 20px; background: #003049; border: 5px solid #c1121f; }
+  .panel div { height: 40px; margin-bottom: 10px; }
+  .a { background-color: #669bbc; }
+  .b { background: #780000; }
+  .c { background: rgba(255, 255, 255, 0.5); }
+  .d { background: none; border: 2px solid #fdf0d5; }
+  .inl { background: #ffd60a; padding: 4px; }
+  p { font-size: 18px; }
+</style>
+</head>
+<body>
+<div class="panel">
+  <div class="a"></div>
+  <div class="b"></div>
+  <div class="c"></div>
+  <div class="d"></div>
+</div>
+<p>Inline <span class="inl">background on a span</span> inside a paragraph.</p>
+</body>
+</html>

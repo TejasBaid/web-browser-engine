@@ -1,0 +1,12 @@
+# Raw output of `RUNS=5 scripts/bench.sh` (release build, Apple M4, 10 cores, 16 GB, macOS).
+# Run under the bench lock with the load-average gate (< 4) satisfied; background load is
+# ordinary desktop applications. Network and subresource fetching are excluded from timings.
+
+machine: Apple M4, load before: 1.90
+https://html.spec.whatwg.org/
+  15.8 MB HTML, 337128 elements, 532 author style rules, document height 2503296px, 431904 display items
+  median of 5 runs: parse HTML 220.9 ms | parse CSS 1.6 ms | style 380.4 ms | layout 757.6 ms | display list 40.7 ms | raster 1024x768 7.4 ms
+https://en.wikipedia.org/wiki/United_States
+  3.0 MB HTML, 21848 elements, 1363 author style rules, document height 70730px, 20622 display items
+  median of 5 runs: parse HTML 26.1 ms | parse CSS 6.3 ms | style 58.9 ms | layout 49.6 ms | display list 2.5 ms | raster 1024x768 2.3 ms
+load after: 1.83

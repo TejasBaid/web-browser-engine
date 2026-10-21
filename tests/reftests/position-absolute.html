@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>position: absolute and containing blocks</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; }
+  .cb { position: relative; width: 400px; height: 300px; margin: 30px; border: 10px solid #1d3557; padding: 20px; background: #f1faee; }
+  .abs { position: absolute; width: 80px; height: 60px; }
+  .tl { top: 0; left: 0; background: #e63946; }
+  .br { bottom: 0; right: 0; background: #457b9d; }
+  .stretch { top: 100px; left: 120px; right: 120px; bottom: 100px; width: auto; height: auto; background: #2a9d8f; }
+  .pct { top: 50%; left: 50%; width: 25%; height: 20%; background: rgba(244, 162, 97, 0.85); }
+  .static { position: absolute; background: #6a4c93; width: 60px; height: 30px; }
+  .nopos { width: 300px; height: 80px; margin: 30px; background: #ddd; }
+  .vp { position: absolute; right: 20px; top: 20px; width: 150px; height: 100px; background: #ffb703; }
+  .inner { position: absolute; left: 10px; top: 10px; width: 40px; height: 40px; background: #023047; }
+</style>
+</head>
+<body>
+<div class="cb">
+  <div class="abs tl"></div>
+  <div class="abs br"></div>
+  <div class="abs stretch"></div>
+  <div class="abs pct"></div>
+  <div class="static"></div>
+</div>
+<div class="nopos">
+  <div class="vp"><div class="inner"></div></div>
+</div>
+</body>
+</html>

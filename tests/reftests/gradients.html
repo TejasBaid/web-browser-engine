@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Backgrounds: gradients</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .row { display: flex; gap: 16px; margin-bottom: 16px; }
+  .row > div { width: 170px; height: 110px; border-radius: 8px; }
+  .a { background: linear-gradient(#e63946, #457b9d); }
+  .b { background: linear-gradient(to right, #f4a261, #2a9d8f); }
+  .c { background: linear-gradient(135deg, #1d3557 0%, #a8dadc 50%, #f1faee 100%); }
+  .d { background: linear-gradient(90deg, #e63946 0 33%, #f1faee 33% 66%, #457b9d 66%); }
+  .e { background: radial-gradient(#ffd166, #ef476f); }
+  .f { background: radial-gradient(circle at top left, #06d6a0, #073b4c); }
+  .g { background: radial-gradient(circle closest-side, #118ab2 60%, transparent 61%), #ffd166; }
+  .h { background: repeating-linear-gradient(45deg, #264653 0 10px, #e9c46a 10px 20px); }
+  .banner { height: 70px; background: linear-gradient(to right, rgba(255,255,255,0), rgba(29,53,87,.9)), #e76f51; border-radius: 8px;
+    color: white; font-size: 22px; font-weight: bold; padding: 20px 24px; box-sizing: border-box; }
+</style>
+</head>
+<body>
+<div class="row"><div class="a"></div><div class="b"></div><div class="c"></div><div class="d"></div></div>
+<div class="row"><div class="e"></div><div class="f"></div><div class="g"></div><div class="h"></div></div>
+<div class="banner">Gradient banner with text</div>
+</body>
+</html>

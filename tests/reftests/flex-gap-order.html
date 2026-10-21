@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexbox: gap and order</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .f { display: flex; background: #e9ecef; border: 2px solid #343a40; margin-bottom: 18px; width: 560px; }
+  .f div { width: 80px; height: 50px; color: #fff; line-height: 50px; text-align: center; }
+  .c1 { background: #e63946; } .c2 { background: #f4a261; } .c3 { background: #2a9d8f; } .c4 { background: #457b9d; } .c5 { background: #6a4c93; }
+  .gap { gap: 20px; }
+  .wrapgap { flex-wrap: wrap; row-gap: 10px; column-gap: 30px; width: 400px; padding: 10px; }
+  .order .c1 { order: 3; }
+  .order .c2 { order: -1; }
+  .order .c4 { order: 1; }
+  .nav { gap: 8px; padding: 8px; justify-content: flex-end; background: #1d3557; }
+  .nav span { padding: 6px 12px; background: #457b9d; color: #fff; }
+</style>
+</head>
+<body>
+<div class="f gap"><div class="c1">1</div><div class="c2">2</div><div class="c3">3</div><div class="c4">4</div></div>
+<div class="f wrapgap"><div class="c1">1</div><div class="c2">2</div><div class="c3">3</div><div class="c4">4</div><div class="c5">5</div><div class="c1">6</div></div>
+<div class="f order"><div class="c1">1</div><div class="c2">2</div><div class="c3">3</div><div class="c4">4</div><div class="c5">5</div></div>
+<div class="f nav"><span>Home</span><span>Docs</span><span>About</span></div>
+</body>
+</html>

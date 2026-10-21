@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vertical-align</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 20px; }
+  .line { background: #f1faee; border-bottom: 1px solid #ccc; margin-bottom: 14px; padding: 4px; }
+  .b { display: inline-block; width: 30px; background: #e63946; }
+  .s { height: 20px; }
+  .m { height: 40px; background: #457b9d; }
+  .t { height: 60px; background: #2a9d8f; }
+  .top { vertical-align: top; }
+  .middle { vertical-align: middle; }
+  .bottom { vertical-align: bottom; }
+  .base { vertical-align: baseline; }
+  sub, sup { color: #6a4c93; }
+  .big { font-size: 40px; }
+  .tt { vertical-align: text-top; }
+  .tb { vertical-align: text-bottom; }
+</style>
+</head>
+<body>
+<div class="line">baseline <span class="b s base"></span><span class="b m base"></span><span class="b t base"></span> xyz</div>
+<div class="line">top <span class="b s top"></span><span class="b t"></span><span class="b m top"></span> xyz</div>
+<div class="line">middle <span class="b s middle"></span><span class="b t"></span><span class="b m middle"></span> xyz</div>
+<div class="line">bottom <span class="b s bottom"></span><span class="b t"></span><span class="b m bottom"></span> xyz</div>
+<div class="line">H<sub>2</sub>O and E = mc<sup>2</sup> and x<sub>i</sub><sup>n</sup></div>
+<div class="line"><span class="big">Big</span> <span class="b s tt"></span> text-top <span class="b s tb"></span> text-bottom</div>
+</body>
+</html>

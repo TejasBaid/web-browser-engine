@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Borders: per-side widths and colors</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .b { float: left; width: 120px; height: 80px; margin: 0 20px 20px 0; background: #f8f9fa; }
+  .uniform { border: 6px solid #1d3557; }
+  .sides { border-style: solid; border-width: 10px; border-color: #e63946 #2a9d8f #457b9d #f4a261; }
+  .widths { border-style: solid; border-color: #6a4c93; border-width: 2px 8px 16px 24px; }
+  .both { border-style: solid; border-width: 4px 20px 30px 12px; border-color: #ffb703 #fb8500 #023047 #219ebc; }
+  .top { border-top: 12px solid #9b2226; }
+  .lr { border-left: 15px solid #0a9396; border-right: 15px solid #ee9b00; }
+  .zero { border: 0 solid red; border-bottom: 8px solid #000; }
+  .thick { border: 30px solid; border-color: #e76f51 #264653; width: 60px; height: 20px; }
+  .nested { border: 8px solid #3a0ca3; padding: 8px; height: auto; }
+  .nested div { border: 8px solid #f72585; height: 32px; }
+</style>
+</head>
+<body>
+<div class="b uniform"></div>
+<div class="b sides"></div>
+<div class="b widths"></div>
+<div class="b both"></div>
+<div class="b top"></div>
+<div class="b lr"></div>
+<div class="b zero"></div>
+<div class="b thick"></div>
+<div class="b nested"><div></div></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inline boxes with padding, borders and margins</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 18px; line-height: 32px; }
+  .box { width: 360px; padding: 10px; background: #f1faee; border: 1px solid #1d3557; margin-bottom: 20px; }
+  .hl { background: #ffd166; padding: 2px 6px; border: 2px solid #ef476f; margin: 0 4px; }
+  .tag { background: #118ab2; color: #fff; padding: 0 8px; }
+  .thick { border-left: 6px solid #073b4c; border-right: 6px solid #06d6a0; background: #e0fbfc; padding: 4px 10px; }
+</style>
+</head>
+<body>
+<div class="box">Inline boxes can <span class="hl">carry padding, borders and horizontal margins that stay on their line</span> while the rest of the text flows around them.</div>
+<div class="box">Short <span class="tag">tags</span> and <span class="tag">labels</span> sit on the baseline next to ordinary text in the paragraph.</div>
+<div class="box">A box that breaks across lines <span class="thick">draws its left border only at the start and its right border only at the end of the run</span> as it wraps.</div>
+</body>
+</html>

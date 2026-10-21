@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Font families</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 22px; }
+  p { margin: 0 0 12px; }
+  .sans { font-family: "Liberation Sans"; }
+  .serif { font-family: "Liberation Serif"; }
+  .mono { font-family: "Liberation Mono"; }
+  .box { padding: 10px; margin-bottom: 14px; background: #f5ebe0; border-left: 6px solid #d5bdaf; }
+</style>
+</head>
+<body>
+<div class="box sans">
+  <p>Sans: The quick brown fox jumps over the lazy dog.</p>
+  <p><b>Sans bold</b> and <i>sans italic</i> and <b><i>both</i></b>.</p>
+</div>
+<div class="box serif">
+  <p>Serif: The quick brown fox jumps over the lazy dog.</p>
+  <p><b>Serif bold</b> and <i>serif italic</i> and <b><i>both</i></b>.</p>
+</div>
+<div class="box mono">
+  <p>Mono: The quick brown fox jumps.</p>
+  <p><b>Mono bold</b> iiiii WWWWW 0123456789</p>
+</div>
+</body>
+</html>

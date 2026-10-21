@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexbox: flex-direction</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .f { display: flex; background: #e9ecef; border: 2px solid #343a40; margin-bottom: 16px; padding: 6px; }
+  .f div { width: 70px; height: 40px; margin: 4px; color: #fff; line-height: 40px; text-align: center; }
+  .f div:nth-child(1) { background: #e63946; }
+  .f div:nth-child(2) { background: #f4a261; }
+  .f div:nth-child(3) { background: #2a9d8f; }
+  .f div:nth-child(4) { background: #457b9d; }
+  .row { flex-direction: row; width: 500px; }
+  .rowr { flex-direction: row-reverse; width: 500px; }
+  .cols { overflow: hidden; }
+  .col { flex-direction: column; width: 200px; float: left; margin-right: 20px; }
+  .colr { flex-direction: column-reverse; width: 200px; float: left; }
+</style>
+</head>
+<body>
+<div class="f row"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+<div class="f rowr"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+<div class="cols">
+  <div class="f col"><div>1</div><div>2</div><div>3</div></div>
+  <div class="f colr"><div>1</div><div>2</div><div>3</div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inheritance and initial values</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  .parent { color: #1d3557; font-size: 20px; font-weight: bold; border: 4px solid #e63946; padding: 10px; background: #f1faee; width: 600px; }
+  .child { margin-top: 8px; padding: 6px; background: #a8dadc; }
+  .explicit { border: inherit; }
+  .reset { color: initial; font-weight: initial; }
+  .unset { font-size: unset; color: unset; }
+  .inh-bg { background: inherit; }
+  .italic { font-style: italic; }
+</style>
+</head>
+<body>
+<div class="parent">
+  Parent text: navy, 20px, bold.
+  <div class="child">Child inherits color, size and weight, but not the border.</div>
+  <div class="child explicit">border: inherit copies the parent's red border.</div>
+  <div class="child reset">initial resets color and weight.</div>
+  <div class="child unset">unset inherits inherited properties.</div>
+  <div class="child inh-bg italic">background: inherit takes the parent's background.</div>
+</div>
+</body>
+</html>

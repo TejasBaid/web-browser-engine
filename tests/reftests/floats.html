@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Floats with text wrap</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; line-height: 20px; }
+  .container { width: 560px; padding: 10px; background: #f1faee; border: 1px solid #1d3557; }
+  .fl { float: left; width: 120px; height: 90px; margin: 0 12px 6px 0; background: #e63946; }
+  .fr { float: right; width: 100px; height: 140px; margin: 0 0 6px 12px; background: #457b9d; }
+  .small { float: left; width: 50px; height: 30px; margin-right: 6px; background: #f4a261; }
+  p { margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="fl"></div>
+  <div class="fr"></div>
+  <p>Text flows around floated boxes. The red box floats to the left and the blue box floats to the right, so the lines in between are shortened until the text moves below the floats. This paragraph keeps going so that it wraps past the bottom of the left float and fills the full width again.</p>
+  <p>A second paragraph continues next to the taller right float, and its line boxes are also shortened where the float intrudes.</p>
+  <div class="small"></div><div class="small"></div><div class="small"></div>
+  <p>Several small left floats stack horizontally next to each other.</p>
+</div>
+</body>
+</html>

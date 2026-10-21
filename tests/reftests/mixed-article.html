@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mixed: article with floated figure</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; background: #fbf8f3; color: #2b2b2b; }
+  article { width: 640px; margin: 0 auto; padding: 24px 0; font-family: "Liberation Serif"; font-size: 17px; line-height: 26px; }
+  h1 { font-family: "Liberation Sans"; font-size: 30px; line-height: 36px; margin: 0 0 6px; }
+  .meta { font-family: "Liberation Sans"; font-size: 13px; color: #8a8a8a; margin: 0 0 18px; }
+  figure { float: right; width: 200px; margin: 4px 0 10px 20px; padding: 8px; background: #fff; border: 1px solid #ddd; }
+  figure img { display: block; width: 200px; height: 150px; }
+  figcaption { font-family: "Liberation Sans"; font-size: 12px; line-height: 16px; color: #666; margin-top: 6px; }
+  p { margin: 0 0 14px; }
+  blockquote { margin: 0 0 14px; padding-left: 16px; border-left: 4px solid #c9a227; font-style: italic; color: #555; }
+  a { color: #1d4ed8; }
+</style>
+</head>
+<body>
+<article>
+  <h1>How a page becomes pixels</h1>
+  <p class="meta">October 2026 · 4 min read</p>
+  <figure><img src="images/photo.jpg" alt=""><figcaption>Figure 1. A floated figure with a caption.</figcaption></figure>
+  <p>Every web page starts as a stream of bytes. The parser turns those bytes into tokens, and the tree builder assembles the tokens into a <a href="#">document object model</a> that mirrors the structure of the markup.</p>
+  <p>Style rules are then matched against every element. The cascade resolves conflicts between rules using origin, importance, specificity and source order, and inheritance fills in whatever is left.</p>
+  <blockquote>Layout is where boxes finally get their sizes and positions.</blockquote>
+  <p>The painter walks the laid-out boxes in stacking order and records drawing commands, which the rasterizer then turns into anti-aliased pixels.</p>
+</article>
+</body>
+</html>

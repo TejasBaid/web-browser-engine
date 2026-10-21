@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ordered lists</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .col { float: left; width: 170px; margin-right: 16px; background: #fff8e1; border-top: 4px solid #ff6f00; }
+  li { margin-bottom: 3px; }
+</style>
+</head>
+<body>
+<div class="col"><ol><li>Decimal</li><li>Two</li><li>Three</li><li>Four</li><li>Five</li><li>Six</li><li>Seven</li><li>Eight</li><li>Nine</li><li>Ten</li><li>Eleven</li></ol></div>
+<div class="col"><ol style="list-style-type: lower-alpha"><li>lower-alpha</li><li>two</li><li>three</li></ol>
+  <ol style="list-style-type: upper-alpha"><li>upper-alpha</li><li>two</li><li>three</li></ol></div>
+<div class="col"><ol style="list-style-type: lower-roman"><li>lower-roman</li><li>two</li><li>three</li><li>four</li><li>five</li></ol>
+  <ol style="list-style-type: upper-roman"><li>upper-roman</li><li>two</li><li>three</li><li>four</li></ol></div>
+<div class="col"><ol start="5"><li>start=5</li><li>six</li></ol>
+  <ol style="color: #1565c0"><li>Blue markers</li><li>follow color</li></ol></div>
+</body>
+</html>

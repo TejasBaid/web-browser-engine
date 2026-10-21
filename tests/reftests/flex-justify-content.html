@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexbox: justify-content</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 13px; }
+  .label { font-family: "Liberation Mono"; margin: 0 0 2px; }
+  .f { display: flex; width: 600px; height: 44px; background: #e9ecef; border: 1px solid #343a40; margin-bottom: 10px; }
+  .f div { width: 80px; margin: 4px 0; }
+  .f div:nth-child(1) { background: #e63946; }
+  .f div:nth-child(2) { background: #2a9d8f; }
+  .f div:nth-child(3) { background: #457b9d; }
+  .auto div:nth-child(2) { margin-left: auto; }
+</style>
+</head>
+<body>
+<p class="label">flex-start</p><div class="f" style="justify-content: flex-start"><div></div><div></div><div></div></div>
+<p class="label">flex-end</p><div class="f" style="justify-content: flex-end"><div></div><div></div><div></div></div>
+<p class="label">center</p><div class="f" style="justify-content: center"><div></div><div></div><div></div></div>
+<p class="label">space-between</p><div class="f" style="justify-content: space-between"><div></div><div></div><div></div></div>
+<p class="label">space-around</p><div class="f" style="justify-content: space-around"><div></div><div></div><div></div></div>
+<p class="label">space-evenly</p><div class="f" style="justify-content: space-evenly"><div></div><div></div><div></div></div>
+<p class="label">margin-left: auto on item 2</p><div class="f auto"><div></div><div></div><div></div></div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Text styles</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; }
+  p { margin: 0 0 10px; }
+  .s12 { font-size: 12px; }
+  .s16 { font-size: 16px; }
+  .s24 { font-size: 24px; }
+  .s36 { font-size: 36px; }
+  .bold { font-weight: bold; }
+  .w700 { font-weight: 700; color: #1d3557; }
+  .ital { font-style: italic; color: #9d0208; }
+  .bi { font-weight: bold; font-style: italic; color: #6a4c93; }
+  .u { text-decoration: underline; }
+  .ucol { text-decoration: underline; color: #2a9d8f; }
+  .upper { text-transform: uppercase; }
+</style>
+</head>
+<body>
+<p class="s12">Twelve pixel text for small print.</p>
+<p class="s16">Sixteen pixel text is the default body size.</p>
+<p class="s24">Twenty-four pixel heading text</p>
+<p class="s36 bold">Thirty-six bold</p>
+<p class="s24 w700">Weight 700 in navy</p>
+<p class="s24 ital">Italic in dark red</p>
+<p class="s24 bi">Bold italic in purple</p>
+<p class="s24 u">Underlined text with descenders gjpqy</p>
+<p class="s24 ucol">Underline takes the text color</p>
+<p class="s16">Mixed: <b>bold</b>, <i>italic</i>, <u>underline</u>, <em>em</em>, <strong>strong</strong>, <span style="color:#e76f51">orange</span>, <span style="font-size:24px">big</span>.</p>
+<p class="s16 upper">text-transform uppercase</p>
+</body>
+</html>

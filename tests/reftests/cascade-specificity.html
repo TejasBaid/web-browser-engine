@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cascade: specificity, order, !important, inline style</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; }
+  div { height: 40px; line-height: 40px; margin-bottom: 8px; padding-left: 10px; width: 600px; color: #fff; }
+  /* Each row should end up green (#2a9d8f). Red means the cascade picked the wrong rule. */
+  #id1 { background: #2a9d8f; }
+  .c1 { background: #e63946; }
+
+  div.c2 { background: #2a9d8f; }
+  .c2 { background: #e63946; }
+
+  .c3 { background: #e63946; }
+  .c3 { background: #2a9d8f; }
+
+  .c4 { background: #2a9d8f !important; }
+  #id4 { background: #e63946; }
+
+  .c5 { background: #e63946 !important; }
+
+  .c6.c6b { background: #2a9d8f; }
+  .c6 { background: #e63946; }
+
+  body > div.c7 { background: #2a9d8f; }
+  div.c7 { background: #e63946; }
+
+  :not(#nope).c8 { background: #2a9d8f; }
+  .c8.c8b { background: #e63946; }
+</style>
+</head>
+<body>
+<div id="id1" class="c1">id beats class</div>
+<div class="c2">type+class beats class</div>
+<div class="c3">later rule wins at equal specificity</div>
+<div id="id4" class="c4">!important beats id</div>
+<div class="c5" style="background: #2a9d8f !important">inline !important beats stylesheet !important</div>
+<div class="c6 c6b" style="">two classes beat one</div>
+<div class="c7">child combinator adds specificity</div>
+<div class="c8 c8b">:not(#id) counts as an id</div>
+<div class="c1" style="background: #2a9d8f">inline style beats class</div>
+</body>
+</html>

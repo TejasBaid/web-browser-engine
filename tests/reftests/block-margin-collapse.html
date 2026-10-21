@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Block layout: margin collapsing</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; }
+  .col { float: left; width: 140px; margin-left: 16px; background: #eeeeee; }
+  .a { height: 40px; background: #e63946; }
+  .b { height: 40px; background: #457b9d; }
+  /* siblings: 30px and 20px collapse to 30px */
+  .s1 { margin-bottom: 30px; }
+  .s2 { margin-top: 20px; }
+  /* parent/child: child's top margin escapes the parent */
+  .parent { margin-top: 10px; background: #2a9d8f; }
+  .child { margin-top: 40px; height: 40px; background: #f4a261; }
+  /* a parent with padding stops the collapse */
+  .padded { padding-top: 1px; background: #2a9d8f; }
+  /* empty box: its margins collapse through */
+  .empty { margin: 25px 0 35px; }
+  /* negative margins */
+  .neg { margin-top: -20px; height: 40px; background: rgba(255, 183, 3, 0.8); }
+  .bottomwrap { background: #8ecae6; }
+  .bottomchild { height: 30px; margin-bottom: 30px; background: #023047; }
+</style>
+</head>
+<body>
+<div class="col">
+  <div class="a s1"></div>
+  <div class="b s2"></div>
+</div>
+<div class="col">
+  <div class="a"></div>
+  <div class="parent"><div class="child"></div></div>
+  <div class="b"></div>
+</div>
+<div class="col">
+  <div class="a"></div>
+  <div class="padded"><div class="child"></div></div>
+  <div class="b"></div>
+</div>
+<div class="col">
+  <div class="a"></div>
+  <div class="empty"></div>
+  <div class="b"></div>
+  <div class="neg"></div>
+</div>
+<div class="col">
+  <div class="bottomwrap"><div class="bottomchild"></div></div>
+  <div class="b" style="margin-top: 10px"></div>
+</div>
+</body>
+</html>

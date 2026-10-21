@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flexbox: align-items and align-self</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 13px; }
+  .label { font-family: "Liberation Mono"; margin: 0 0 2px; }
+  .f { display: flex; width: 340px; height: 100px; background: #e9ecef; border: 1px solid #343a40; margin: 0 20px 10px 0; }
+  .wrapc { float: left; }
+  .f div { width: 60px; margin: 0 4px; }
+  .f div:nth-child(1) { background: #e63946; height: 30px; }
+  .f div:nth-child(2) { background: #2a9d8f; height: 60px; }
+  .f div:nth-child(3) { background: #457b9d; height: 45px; }
+  .stretch div { height: auto !important; }
+  .self div:nth-child(1) { align-self: flex-end; }
+  .self div:nth-child(2) { align-self: center; }
+  .self div:nth-child(3) { align-self: stretch; height: auto; }
+  .base div { font-size: 14px; }
+  .base div:nth-child(2) { font-size: 28px; padding-top: 10px; }
+</style>
+</head>
+<body>
+<div class="wrapc"><p class="label">stretch (default)</p><div class="f stretch"><div></div><div></div><div></div></div></div>
+<div class="wrapc"><p class="label">flex-start</p><div class="f" style="align-items: flex-start"><div></div><div></div><div></div></div></div>
+<div class="wrapc"><p class="label">flex-end</p><div class="f" style="align-items: flex-end"><div></div><div></div><div></div></div></div>
+<div class="wrapc"><p class="label">center</p><div class="f" style="align-items: center"><div></div><div></div><div></div></div></div>
+<div class="wrapc"><p class="label">align-self: end / center / stretch</p><div class="f self" style="align-items: flex-start"><div></div><div style="height:30px"></div><div style="height:auto"></div></div></div>
+<div class="wrapc"><p class="label">baseline</p><div class="f base" style="align-items: baseline"><div>Ab</div><div>Ab</div><div>Ab</div></div></div>
+</body>
+</html>

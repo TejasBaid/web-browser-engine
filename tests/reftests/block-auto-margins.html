@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Auto margins</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 0; padding: 20px; background: #f1faee; }
+  div { height: 50px; margin-bottom: 14px; }
+  .center { width: 300px; margin-left: auto; margin-right: auto; background: #e63946; }
+  .right { width: 200px; margin-left: auto; background: #457b9d; }
+  .left { width: 250px; margin-right: auto; background: #2a9d8f; }
+  .wrap { width: 600px; height: auto; padding: 10px 0; background: #1d3557; margin: 0 auto 14px; }
+  .wrap div { width: 50%; margin: 0 auto; background: #f4a261; }
+  .fixedboth { width: 200px; margin-left: 100px; margin-right: 100px; background: #6a4c93; }
+</style>
+</head>
+<body>
+<div class="center"></div>
+<div class="right"></div>
+<div class="left"></div>
+<div class="wrap"><div></div></div>
+<div class="fixedboth"></div>
+</body>
+</html>

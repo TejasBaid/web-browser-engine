@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>white-space</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; }
+  div { width: 260px; margin-bottom: 14px; padding: 6px; background: #f8f9fa; border: 1px solid #adb5bd; overflow: hidden; }
+  .normal { white-space: normal; }
+  .pre { white-space: pre; background: #e7f5ff; }
+  .nowrap { white-space: nowrap; background: #fff4e6; }
+  .prewrap { white-space: pre-wrap; background: #ebfbee; }
+  .preline { white-space: pre-line; background: #f3f0ff; }
+  pre { font-family: "Liberation Mono"; font-size: 13px; margin: 0; background: #212529; color: #f8f9fa; padding: 8px; width: 300px; }
+</style>
+</head>
+<body>
+<div class="normal">normal:   spaces    collapse and
+lines   join together into one paragraph.</div>
+<div class="pre">pre:   spaces    are kept
+and   newlines   too.</div>
+<div class="nowrap">nowrap: this long line never wraps even when it is wider than its box.</div>
+<div class="prewrap">pre-wrap:   spaces    kept,
+but long lines still wrap when they reach the edge.</div>
+<div class="preline">pre-line:   spaces    collapse
+but newlines
+are kept.</div>
+<pre>fn main() {
+    println!("hello");
+}</pre>
+</body>
+</html>

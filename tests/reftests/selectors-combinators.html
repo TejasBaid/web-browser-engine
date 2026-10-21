@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Combinators</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 15px; }
+  .box { width: 340px; float: left; margin-right: 20px; padding: 8px; border: 2px solid #333; }
+  .box div, .box p { height: 26px; line-height: 26px; margin: 4px 0; padding-left: 8px; background: #e9ecef; }
+  .desc span { color: #c1121f; font-weight: bold; }
+  .child > p { background: #2a9d8f; color: #fff; }
+  .adj h4 + p { background: #e76f51; color: #fff; }
+  .gen h4 ~ p { background: #457b9d; color: #fff; }
+  h4 { margin: 4px 0; font-size: 15px; }
+  .nest .a .b { background: #ffb703; }
+  .nest .a > .b > .c { background: #6a4c93; color: #fff; }
+</style>
+</head>
+<body>
+<div class="box desc">
+  <p>Descendant: <span>red bold</span></p>
+  <div><p>deep <em><span>also red</span></em></p></div>
+</div>
+<div class="box child">
+  <p>direct child (teal)</p>
+  <div><p>grandchild (not teal)</p></div>
+  <p>direct child (teal)</p>
+</div>
+<div class="box adj" style="clear: left; margin-top: 16px">
+  <p>before heading</p>
+  <h4>Heading</h4>
+  <p>adjacent sibling (orange)</p>
+  <p>not adjacent</p>
+</div>
+<div class="box gen" style="margin-top: 16px">
+  <p>before heading</p>
+  <h4>Heading</h4>
+  <p>general sibling (blue)</p>
+  <div>a div</div>
+  <p>general sibling (blue)</p>
+</div>
+<div class="box nest" style="clear: left; margin-top: 16px">
+  <div class="a" style="height:auto; padding: 4px"><div class="b" style="height:auto; padding:4px">.a .b (yellow)<div class="c">.a &gt; .b &gt; .c (purple)</div></div></div>
+</div>
+</body>
+</html>

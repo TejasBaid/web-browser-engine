@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>display: none, inline, block, inline-block</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 16px; }
+  .none { display: none; }
+  .blockspan { display: block; background: #a8dadc; padding: 6px; margin: 6px 0; }
+  .inlinediv { display: inline; background: #ffd166; }
+  .ib { display: inline-block; width: 90px; height: 50px; background: #e63946; margin: 4px; color: #fff; padding: 4px; vertical-align: top; }
+  .ib.text { width: auto; height: auto; background: #457b9d; }
+  .box { width: 500px; border: 2px solid #1d3557; padding: 8px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="box">Before <span class="none">HIDDEN</span>after: the hidden span takes no space.<div class="none">hidden block</div></div>
+<div class="box">A <span class="blockspan">span with display: block</span> breaks the line.</div>
+<div class="box">These <div class="inlinediv">divs are</div> <div class="inlinediv">inline</div> and flow with text.</div>
+<div class="box">Inline-blocks: <span class="ib">one</span><span class="ib">two</span><span class="ib text">shrink to fit</span><span class="ib">four</span><span class="ib">five</span></div>
+</body>
+</html>

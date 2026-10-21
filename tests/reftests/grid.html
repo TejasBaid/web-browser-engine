@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Grid layout</title>
+<link rel="stylesheet" href="reftest.css">
+<style>
+  body { margin: 20px; font-size: 14px; }
+  .g { display: grid; gap: 8px; margin-bottom: 16px; background: #eef1f5; padding: 8px; }
+  .g > div { background: #457b9d; color: white; padding: 6px; }
+  .g > div:nth-child(2n) { background: #e63946; }
+  .g > div:nth-child(3n) { background: #2a9d8f; }
+  .fr { grid-template-columns: 120px 1fr 2fr; }
+  .fill { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .areas {
+    grid-template-areas: "head head head" "nav main side" "foot foot foot";
+    grid-template-columns: 100px 1fr 120px;
+    grid-template-rows: 32px 70px 28px;
+  }
+  .areas .h { grid-area: head; background: #1d3557; }
+  .areas .n { grid-area: nav; background: #f4a261; }
+  .areas .m { grid-area: main; background: #a8dadc; color: #1d3557; }
+  .areas .s { grid-area: side; background: #e9c46a; color: #1d3557; }
+  .areas .f { grid-area: foot; background: #264653; }
+  .span { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 36px; }
+  .span .wide { grid-column: span 2; }
+  .span .tall { grid-row: span 2; }
+  .align { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 60px; justify-items: center; align-items: center; }
+  .align > div { width: 60px; }
+  .align .end { justify-self: end; align-self: end; }
+</style>
+</head>
+<body>
+<div class="g fr"><div>120px</div><div>1fr</div><div>2fr</div></div>
+<div class="g fill"><div>auto-fill</div><div>minmax</div><div>110px</div><div>1fr</div><div>five</div><div>six</div></div>
+<div class="g areas"><div class="h">head</div><div class="n">nav</div><div class="m">main area</div><div class="s">side</div><div class="f">foot</div></div>
+<div class="g span"><div class="wide">span 2</div><div class="tall">tall</div><div>c</div><div>d</div><div class="wide">span 2 again</div></div>
+<div class="g align"><div>center</div><div>center</div><div class="end">end</div></div>
+</body>
+</html>
