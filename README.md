@@ -1,7 +1,5 @@
 # browser-engine
 
-[![CI](https://github.com/TejasBaid/web-browser-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/TejasBaid/web-browser-engine/actions/workflows/ci.yml)
-
 A web browser engine written from scratch in Rust. HTML goes through a WHATWG-conformant tokenizer and tree
 builder (**100% of the html5lib-tests tokenizer and tree-construction suites**), CSS through a CSS Syntax Level 3
 tokenizer and parser, a selector engine and a full cascade, and the styled tree through hand-written block, inline,
@@ -243,10 +241,10 @@ scripts/bench.sh                                      # performance (see below)
 | `tests/pipeline.rs` | end to end: HTML string to pixels, canvas background propagation, link hit testing and URL resolution, scrolling with fixed elements, `dump-layout` |
 | `tests/robustness.rs` | pushes all ~1,800 html5lib tree-construction inputs (deliberately malformed markup) through style, layout, display list and rasterization at two viewport sizes; nothing may panic |
 | `tests/random_layouts.rs` | 400 deterministic pseudo-random documents mixing every display type, floats, positioning, flex and grid properties, negative/huge/percentage/`calc()` sizes and text; geometry must stay finite and nothing may panic (`RANDOM_CASES=4000` for a longer run) |
-| `tests/reftests.rs` | renders all 54 reftest pages and requires each to stay within 1.5 points of its recorded pixel-match score against Chrome (uses the stored screenshots, so CI doesn't need Chrome) |
+| `tests/reftests.rs` | renders all 54 reftest pages and requires each to stay within 1.5 points of its recorded pixel-match score against Chrome (uses the stored screenshots, so the tests don't need Chrome) |
 
-CI (`.github/workflows/ci.yml`) runs `cargo fmt --check`, clippy with `-D warnings` (with and without the GUI
-feature), the test suite on Linux and macOS, a headless render smoke test, and rustdoc with `-D warnings`.
+`cargo fmt --check`, clippy with `-D warnings` (with and without the GUI feature) and rustdoc with
+`-D warnings` are all clean.
 
 ### html5lib-tests
 
